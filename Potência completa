@@ -1,0 +1,49 @@
+//calculos de potencia
+#include <stdio.h>
+
+int main() {
+    float P, V, I, R;
+
+    int choice;
+    printf("Escolha o cálculo da potência:\n");
+    printf("1: P = V * I\n");
+    printf("2: P = I^2 * R\n");
+    printf("3: P = V^2 / R\n");
+    printf("Digite sua escolha (1, 2 ou 3): ");
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1:
+            printf("Coloque a tensao (V): ");
+            scanf("%f", &V);
+            printf("Coloque a corrente (I): ");
+            scanf("%f", &I);
+            P = V * I;
+            printf("Sua potencia eh: %.2f W\n", P);
+            break;
+        
+        case 2:
+            printf("Coloque a corrente (I): ");
+            scanf("%f", &I);
+            printf("Coloque a resistencia (R): ");
+            scanf("%f", &R);
+            P = I * I * R;
+            printf("Sua potencia eh: %.2f W\n", P);
+            break;
+
+        case 3:
+            printf("Coloque a tensao (V): ");
+            scanf("%f", &V);
+            printf("Coloque a resistencia (R): ");
+            scanf("%f", &R);
+            P = (V * V) / R;
+            printf("Sua potencia eh: %.2f W\n", P);
+            break;
+
+        default:
+            printf("Escolha invalida!\n");
+            break;
+    }
+
+    return 0;
+}
